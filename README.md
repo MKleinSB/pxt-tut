@@ -37,7 +37,7 @@ basic.forever(() => {
 });
 ```
 
-## Schritt 4
+## Schritt 4 @fullscreen
 
 Wenn `gradzahl` kleiner als `135` ist, zeigt der @boardname@ hauptsächlich nach **Osten**. Zeige ein `O` auf dem @boardname@ an.
 
@@ -53,7 +53,7 @@ basic.forever(() => {
 });
 ```
 
-## Schritt 5
+## Schritt 5 @fullscreen
 
 Wenn `gradzahl` kleiner als `225` ist, zeigt der @boardname@ hauptsächlich nach **Süden**. Zeige ein `S` auf dem @boardname@ an.
 
@@ -72,7 +72,7 @@ basic.forever(() => {
 });
 ```
 
-## Schritt 6
+## Schritt 6 @fullscreen
 
 Wenn keine dieser Bedingungen true zurückgibt, muss der @boardname@ nach **Westen** zeigen. Zeige ein `W` auf dem @boardname@ an.
 
