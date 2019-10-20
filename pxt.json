@@ -9,7 +9,7 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "https://github.com/MKleinSB/pxt-tut/blob/master/compass.png"
+        "github:mkleinsb/pxt-tut/blob/master/compass.png"
     ],
     "preferredEditor": "tsprj",
     "testFiles": [
