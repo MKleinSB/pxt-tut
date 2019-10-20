@@ -1,30 +1,99 @@
 # pxt-tut
 
+## ~avatar avatar
 
+Willkommen! Dieses geführte Tutorial zeigt dir, wie du ein Skript programmierst das anzeigt, in welche Himmelsrichtung dein @boardname@ zeigt. Fangen wir an!
 
-## Usage
+## Schritt 1
 
-This repository contains a MakeCode extension. To use it in MakeCode,
+Erstelle eine Schleife, die kontinuierlich den Messwert des Kompasses auswertet.
 
-* open https://makecode.microbit.org/
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for the URL of this repository
+```blocks
+basic.forever(() => {
 
-## Collaborators
+})
+```
 
-You can invite users to become collaborators to this repository. This will allow multiple users to work on the same project at the same time.
-[Learn more...](https://help.github.com/en/articles/inviting-collaborators-to-a-personal-repository)
+## Schritt 2 @fullscreen
 
-To edit this repository in MakeCode,
+Speichere den ausgelesenen Wert des @boardname@ in einer Variablen mit dem Namen `gradzahl`.
 
-* open https://makecode.microbit.org/
-* click on **Import** then click on **Import URL**
-* paste the repository URL and click import
+```blocks
+basic.forever(() => {
+    let gradzahl = input.compassHeading()
+})
+```
 
-## Supported targets
+## Schritt 3 @fullscreen
 
-* for PXT/microbit
-* for PXT/microbit
-(The metadata above is needed for package search.)
+Wenn `gradzahl` kleiner als `45` oder größer als `315` ist, dann zeigt die Kompassrichtung hauptsächlich in Richtung **Norden**. Zeige ein `N` auf dem @boardname@ an.
 
+```blocks
+basic.forever(() => {
+    let gradzahl = input.compassHeading();
+    if (gradzahl < 45 || gradzahl > 315) {
+        basic.showString("N");
+    }
+});
+```
+
+## Schritt 4
+
+Wenn `gradzahl` kleiner als `135` ist, zeigt der @boardname@ hauptsächlich nach **Osten**. Zeige ein `O` auf dem @boardname@ an.
+
+```blocks
+basic.forever(() => {
+    let gradzahl = input.compassHeading();
+    if (gradzahl < 45 || gradzahl > 315) {
+        basic.showString("N");
+    }
+    else if (gradzahl < 135) {
+        basic.showString("O");
+    }
+});
+```
+
+## Schritt 5
+
+Wenn `gradzahl` kleiner als `225` ist, zeigt der @boardname@ hauptsächlich nach **Süden**. Zeige ein `S` auf dem @boardname@ an.
+
+```blocks
+basic.forever(() => {
+    let gradzahl = input.compassHeading();
+    if (gradzahl < 45 || gradzahl > 315) {
+        basic.showString("N");
+    }
+    else if (gradzahl < 135) {
+        basic.showString("O");
+    }
+    else if (gradzahl < 225) {
+        basic.showString("S");
+    }
+});
+```
+
+## Schritt 6
+
+Wenn keine dieser Bedingungen true zurückgibt, muss der @boardname@ nach **Westen** zeigen. Zeige ein `W` auf dem @boardname@ an.
+
+```blocks
+basic.forever(() => {
+    let gradzahl = input.compassHeading();
+    if (gradzahl < 45 || gradzahl > 315) {
+        basic.showString("N");
+    }
+    else if (gradzahl < 135) {
+        basic.showString("O");
+    }
+    else if (gradzahl < 225) {
+        basic.showString("S");
+    }
+    else {
+        basic.showString("W");
+    }
+});
+```
+
+## Schritt 7 @tutorialCompleted
+
+Lade jetzt das Programm auf deinen @boardname@ und teste ob es so funktioniert wie gewünscht!
